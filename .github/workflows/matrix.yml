@@ -7,13 +7,13 @@ jobs:
     build:
       strategy:
         matrix:
-          node-version: [12, 16]
+          node-version: [14, 16]
           os: [ubuntu-latest, windows-latest]
           include:
             - node-version: 18
             - os: ubuntu-slim
           exclude:
-            - node-version: 12
+            - node-version: 14
             - os: windows-latest
       runs-on: ${{ matrix.os }}
       steps: 
