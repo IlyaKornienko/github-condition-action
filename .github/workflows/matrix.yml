@@ -8,13 +8,13 @@ jobs:
       strategy:
         matrix:
           node-version: [12, 16]
-          os: [ubuntu-latest, windows-lastest]
+          os: [ubuntu-latest, windows-latest]
           include:
             - node-version: 18
-            - os: [ubuntu-slim]
+            - os: ubuntu-slim
           exclude:
             - node-version: 12
-            - os: [windows-latest]
+            - os: windows-latest
       runs-on: ${{ matrix.os }}
       steps: 
       - name: Get code
