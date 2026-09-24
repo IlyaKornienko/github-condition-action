@@ -11,7 +11,7 @@ jobs:
           os: [ubuntu-latest, windows-latest]
           include:
             - node-version: 18
-            - os: ubuntu-slim
+            - os: ubuntu-latest
           exclude:
             - node-version: 14
             - os: windows-latest
