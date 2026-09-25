@@ -71,6 +71,14 @@ jobs:
     uses: ./.github/workflows/reuseble.yml
     with:
       artifact-name: dist-files
+    # secrets:
+    #   some-secret: ${{ secrets.some-secret }}
+  pring-reuseble-deploy-job:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print deploy output
+        run: echo ${{ needs.deploy.outputs.result }}
   report:
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     needs: [lint, deploy]
